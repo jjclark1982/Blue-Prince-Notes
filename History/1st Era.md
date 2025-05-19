@@ -1,0 +1,1 @@
+"ajera" in [[Erajan Langauge]]

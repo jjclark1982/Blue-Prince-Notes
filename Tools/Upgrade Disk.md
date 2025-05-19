@@ -1,0 +1,12 @@
+### found in:
+- [[Commissary]]
+- [[Office]]
+- [[Garage]]
+- [[Basement]]
+- [[Great Hall]]
+- [[Morning Room]]
+- [[Her Ladyship's Chamber]]
+- [[Vault]]
+- [[Archives]]
+- [[Freezer]]
+- [[Trading Post]]

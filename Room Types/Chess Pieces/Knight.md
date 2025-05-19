@@ -1,0 +1,1 @@
+**Knight** — [[Security Room]], [[Observatory]], [[Armory]], [[Treasure Trove]]

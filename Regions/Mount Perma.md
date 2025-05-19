@@ -1,0 +1,1 @@
+[[Reddington]]'s second highest summit

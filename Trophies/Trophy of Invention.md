@@ -1,0 +1,1 @@
+create all 8 contraptions

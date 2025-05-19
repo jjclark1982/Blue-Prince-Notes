@@ -1,0 +1,6 @@
+---
+tags:
+  - contraption
+---
+
+[[Shovel]] + [[Compass]]

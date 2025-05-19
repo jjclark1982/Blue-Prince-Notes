@@ -1,0 +1,5 @@
+---
+tags:
+  - Red
+  - dead-end
+---

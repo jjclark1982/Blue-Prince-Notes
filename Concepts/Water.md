@@ -1,0 +1,6 @@
+[[Pump Room]]
+[[Fountain]]
+[[Kitchen]]
+[[Greenhouse]]
+[[Pool]]
+[[Reservoir]]

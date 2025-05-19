@@ -1,0 +1,1 @@
+The [[Computer]] in the [[Shelter]] can unlock all doors if [[Radiation]] levels get high enough

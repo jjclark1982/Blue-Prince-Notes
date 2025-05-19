@@ -1,0 +1,5 @@
+---
+tags:
+  - Blue
+---
+basic rooms

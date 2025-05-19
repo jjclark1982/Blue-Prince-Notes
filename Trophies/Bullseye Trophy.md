@@ -1,0 +1,1 @@
+solve 40 [[Dartboard Puzzle]]s

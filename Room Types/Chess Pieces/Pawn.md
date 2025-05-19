@@ -1,0 +1,1 @@
+**Pawn** — [[Bedroom]], [[Parlor]], [[Den]], [[Storeroom]], [[Guest Bedroom]], [[Dining Room]], [[Walk-in Closet]], [[Drawing Room]], [[Bunk Room]], [[Secret Passage]], [[Dormitory]], [[Freezer]], [[Solarium]], [[Lost and Found]]

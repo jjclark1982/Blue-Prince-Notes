@@ -1,0 +1,1 @@
+reach [[Room 46]] in [[Curse Mode]]

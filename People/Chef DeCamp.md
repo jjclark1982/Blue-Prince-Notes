@@ -1,0 +1,1 @@
+cook, head of [[Kitchen]], maker of tasty meals

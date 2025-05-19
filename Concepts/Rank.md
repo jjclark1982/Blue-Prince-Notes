@@ -1,0 +1,1 @@
+number of rows of rooms in [[The House]], from 1 at the [[Entry Hall]] to 9 at the [[Antechamber]] to 10 at [[Room 46]]
