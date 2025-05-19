@@ -1,0 +1,86 @@
+{
+  "collapse-filter": false,
+  "search": "path:People OR path:Organizations  ",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "tag:#Red  ",
+      "color": {
+        "a": 1,
+        "rgb": 14048348
+      }
+    },
+    {
+      "query": "tag:#Orange  ",
+      "color": {
+        "a": 1,
+        "rgb": 14069084
+      }
+    },
+    {
+      "query": "tag:#Yellow",
+      "color": {
+        "a": 1,
+        "rgb": 14349399
+      }
+    },
+    {
+      "query": "tag:#Green  ",
+      "color": {
+        "a": 1,
+        "rgb": 6084188
+      }
+    },
+    {
+      "query": "tag:#Blue",
+      "color": {
+        "a": 1,
+        "rgb": 6059222
+      }
+    },
+    {
+      "query": "tag:#Violet  ",
+      "color": {
+        "a": 1,
+        "rgb": 12344534
+      }
+    },
+    {
+      "query": "tag:#White  ",
+      "color": {
+        "a": 1,
+        "rgb": 12566463
+      }
+    },
+    {
+      "query": "tag:#Black  ",
+      "color": {
+        "a": 1,
+        "rgb": 5395026
+      }
+    },
+    {
+      "query": "tag:#Pink",
+      "color": {
+        "a": 1,
+        "rgb": 16753632
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 2.00369466145833,
+  "collapse-forces": false,
+  "centerStrength": 0.130859375,
+  "repelStrength": 5.00325520833333,
+  "linkStrength": 1,
+  "linkDistance": 138,
+  "scale": 1.4436696209717839,
+  "close": true
+}

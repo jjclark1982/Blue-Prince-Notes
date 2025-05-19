@@ -1,0 +1,354 @@
+{
+  "main": {
+    "id": "3aedfe7cd458b7a8",
+    "type": "split",
+    "children": [
+      {
+        "id": "24c31af336c77a57",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "12c0ba2078a53f7b",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Blue Prince Notes.md",
+                "mode": "source",
+                "source": false
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "Blue Prince Notes"
+            }
+          },
+          {
+            "id": "ba1b1c4c64a312f1",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Puzzles/Red Letters in Safes.md",
+                "mode": "source",
+                "source": false
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "Red Letters in Safes"
+            }
+          },
+          {
+            "id": "2a07c0e9d6a1a6cb",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "graph",
+              "state": {},
+              "pinned": true,
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          },
+          {
+            "id": "e8451619ee19dceb",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Symbols/Spiral of Stars.md",
+                "mode": "source",
+                "source": false
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "Spiral of Stars"
+            }
+          },
+          {
+            "id": "ec8e3b8dedfe8d57",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Puzzles/Realm Sigils.md",
+                "mode": "source",
+                "source": false
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "Realm Sigils"
+            }
+          },
+          {
+            "id": "e624071d5c4d4339",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Puzzles/Erajan Langauge.md",
+                "mode": "source",
+                "source": false
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "Erajan Langauge"
+            }
+          },
+          {
+            "id": "6affa7a0f141ca2f",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "graph",
+              "state": {},
+              "pinned": true,
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          },
+          {
+            "id": "e66d5ba34fb20b9a",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Puzzles/Admin Keys.md",
+                "mode": "source",
+                "source": false
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "Admin Keys"
+            }
+          },
+          {
+            "id": "753b915b0866c4c0",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Puzzles/CASTLE Puzzle.md",
+                "mode": "source",
+                "source": false
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "CASTLE Puzzle"
+            }
+          },
+          {
+            "id": "377c7140975dbe8f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Puzzles/Realm Sigils.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Realm Sigils"
+            }
+          }
+        ],
+        "currentTab": 9
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "1079f96f0e983ba7",
+    "type": "split",
+    "children": [
+      {
+        "id": "8b7446822f1c6fbc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bdf5b9ab7860cdc7",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "6003f2c1b15b40b2",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "cbf287e36d0c2c2e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "80d0de83febde611",
+    "type": "split",
+    "children": [
+      {
+        "id": "234e89e126f292ef",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "90eac9a82160ed31",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Puzzles/Realm Sigils.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Realm Sigils"
+            }
+          },
+          {
+            "id": "7505bc96669f491c",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "c6c24513b078e178",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "2ef7b662a2c0f7c9",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "377c7140975dbe8f",
+  "lastOpenFiles": [
+    "Puzzles/Numeric Cores.md",
+    "People/Phillip Wilkins.md",
+    "Books/A New Clue.md",
+    "Puzzles/Untitled.md",
+    "Notebooks/Numeric Cores.ipynb",
+    "Notebooks/Untitled.ipynb",
+    "Notebooks",
+    "Blue Prince Flowchart v2.png",
+    "Correspondence/SACRED Note.md",
+    "Realms/Corarica.md",
+    "Puzzles/Realm Sigils.md",
+    "Rooms/Drafting Studio Additions/Clocktower.md",
+    "Color Table.md",
+    "Blue Prince Notes.md",
+    "Screenshots/softlocked-by-treasure-map.jpg",
+    "Puzzles/CASTLE Puzzle.md",
+    "Puzzles/Rogue Letters.md",
+    "Tools/Major Keys/Sanctum Key.md",
+    "Puzzles/Ascending the Throne.md",
+    "Rooms/Room 46.md",
+    "Puzzles/Reaching Room 46.md",
+    "Blue Prince Flowchart v1.png",
+    "Blue Prince Flowchart.png",
+    "People/Mary Matthew Jones.md",
+    "Blue Prince Flowchart.graffle",
+    "Concepts/Firestarter.md",
+    "Room Types/Tomorrow Rooms.md",
+    "Locations/Aries Court.md",
+    "Correspondence/Tomb Letter.md",
+    "Puzzles/Erajan Langauge.md",
+    "Regions/Grand City of Fenn.md",
+    "History/5th Era.md",
+    "History/6th Era.md",
+    "Concepts/Anagrams.md",
+    "Screenshots/graph-of-locations.png",
+    "Screenshots/graph-of-people.png",
+    "Screenshots/people.png",
+    "Screenshots/Screenshot 2025-05-14 at 9.57.28 AM.png",
+    "Screenshots/Screenshot 2025-05-14 at 10.59.42 AM.png",
+    "Screenshots/locations.png",
+    "Correspondence",
+    "Organizations",
+    "Banners",
+    "Screenshots",
+    "Continents",
+    "Concepts"
+  ]
+}
