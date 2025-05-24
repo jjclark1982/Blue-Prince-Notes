@@ -144,13 +144,13 @@ class CoreWord extends Array {
 }
 
 function UnitView ({unit}) {
-    console.log(unit);
     return html`
         <span class="unit-view" data-operation=${unit.operation}>
             ${unit.value}
             <br/>
             ${unit.toString()}
-        </span>`;
+        </span>
+    `;
 }
 
 function WordView ({word}) {
