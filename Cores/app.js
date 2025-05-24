@@ -4,10 +4,11 @@ import { html, render, useState, Component } from 'https://esm.sh/htm/preact/sta
 class CoreUnit {
     static letterZero = 'A'.codePointAt(0) - 1;
     value = 0;
-    operation = '';
+    operation = null;
 
-    constructor({value, operation}) {
+    constructor({value, operation, text}) {
         this.value = value;
+        this.text = text;
         if (operation != null) {
             this.operation = operation;
         }
@@ -29,12 +30,20 @@ class CoreUnit {
         else return this.value;
     }
 
-    concat(rhs) {
-        const catValue = parseInt(`${this.value}${rhs.value}`);
-        return new CoreUnit({value: catValue});
+    appendTo(lhs) {
+        if (lhs == null) {
+            return this;
+        }
+        return new CoreUnit({
+            value: parseInt(`${lhs.value}${this.value}`),
+            text: `${lhs.toString()}${this.toString()}`
+        });
     }
 
     toString() {
+        if (this.text) {
+            return this.text;
+        }
         try {
             return String.fromCodePoint(this.value + CoreUnit.letterZero);
         }
@@ -51,7 +60,10 @@ class CoreUnit {
         else {
             value = letter.toUpperCase().codePointAt(0) - CoreUnit.letterZero;
         }
-        return new CoreUnit({value});
+        return new CoreUnit({
+            value,
+            text:letter
+        });
     }
 }
 
@@ -65,20 +77,26 @@ class CoreWord extends Array {
     }
 
     toString() {
-        return this.map((c)=>c.toString()).join('');
+        return this.map((unit)=>unit.toString()).join('');
+    }
+
+    toUnit() {
+        return this.reduce(((a, b)=>b.appendTo(a)), null);
     }
 
     evaluate() {
-        return this.reduce((a, b)=>{
-            return b.evaluate(a)
-        }, 0);
+        return this.reduce(((a, b)=>b.evaluate(a)), 0);
     }
 
     copyWithOperations(operations=[]) {
         if (operations.length != this.length) {
             throw new Error("operation length mismatch");
         }
-        return this.map((unit, i)=>(new CoreUnit({value:unit.value, operation: operations[i]})));
+        return this.map((unit, i)=>(new CoreUnit({
+            value: unit.value,
+            operation: operations[i],
+            text: unit.text
+        })));
     }
 
     groupings(n=4) {
@@ -86,7 +104,7 @@ class CoreWord extends Array {
             return [];
         }
         else if (n == 1) {
-            return [CoreWord.from([this.reduce(((a,b)=>a.concat(b)), new CoreUnit({value:0}))])];
+            return [CoreWord.from([this.toUnit()])];
         }
         else if (this.length == n) {
             return [this];
@@ -126,8 +144,13 @@ class CoreWord extends Array {
 }
 
 function UnitView ({unit}) {
-  const op = unit.operation || "";
-  return html`<span class="unit-view" data-operation=${op}>${unit.value}<br/>${unit.toString()}</span>`;
+    console.log(unit);
+    return html`
+        <span class="unit-view" data-operation=${unit.operation}>
+            ${unit.value}
+            <br/>
+            ${unit.toString()}
+        </span>`;
 }
 
 function WordView ({word}) {
@@ -136,16 +159,18 @@ function WordView ({word}) {
         const coreUnit = new CoreUnit({value: core.evaluate()});
         return html`
             <div class="unit-list-view">
-            ${core.map((unit)=>UnitView({unit}))}
-            ${" "}=${" "}
-            <${UnitView} unit=${coreUnit} />
-            </div>`;
+                ${core.map((unit)=>UnitView({unit}))}
+                ${" "}=${" "}
+                <${UnitView} unit=${coreUnit} />
+            </div>
+        `;
     }
     else {
         return html`
             <div class="unit-list-view">
-            ${word.map((unit)=>UnitView({unit}))}
-            </div>`;
+                ${word.map((unit)=>UnitView({unit}))}
+            </div>
+        `;
     }
 }
 
@@ -154,9 +179,9 @@ function App (props) {
   const [message, setMessage] = useState(props.message || '');
   const words = CoreWord.parseWordList(message);
   return html`
-  <h1>Numeric Core Solver</h1>
-  <textarea value=${message} onKeyup=${function(event){setMessage(event.target.value)}} />
-  ${words.map((word)=>(WordView({word})))}
+    <h1>Numeric Core Solver</h1>
+    <textarea value=${message} onKeyup=${function(event){setMessage(event.target.value)}} />
+    ${words.map((word)=>(WordView({word})))}
   `;
 }
 
