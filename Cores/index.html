@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+  <title>Numeric Core Solver</title>
+  <link rel="modulepreload" href="https://esm.sh/htm/preact/standalone" />
+  <style>
+    body {
+      --blueprint-bg-dark:  #1b3d7d;
+      --blueprint-bg-mid:   #214986;
+      --blueprint-bg-light: #24569B;
+      --blueprint-fg-dark:  #2261A4;      
+      background-color: var(--blueprint-bg-dark);
+      color: white;
+    }
+    .unit-view {
+      display: inline-block;
+      text-align: center;
+      outline: 1px solid white;
+      padding: 0.5em 0.75em;
+      border-radius: 3em;
+      background: #88b;
+      font-weight: bold;
+    }
+    .unit-view[data-operation="add"] {
+      color: cyan;
+    }
+    .unit-view[data-operation="sub"] {
+      color: yellow;
+    }
+    .unit-view[data-operation="mul"] {
+      color: violet;
+    }
+    .unit-view[data-operation="div"] {
+      color: rebeccapurple;
+    }
+  </style>
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+
+</body>
