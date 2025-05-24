@@ -29,6 +29,11 @@ class CoreUnit {
         else return this.value;
     }
 
+    concat(rhs) {
+        const catValue = parseInt(`${this.value}${rhs.value}`);
+        return new CoreUnit({value: catValue});
+    }
+
     toString() {
         try {
             return String.fromCodePoint(this.value + CoreUnit.letterZero);
@@ -59,6 +64,10 @@ class CoreWord extends Array {
         return words.split(/\s+/).map(CoreWord.parse);
     }
 
+    toString() {
+        return this.map((c)=>c.toString()).join('');
+    }
+
     evaluate() {
         return this.reduce((a, b)=>{
             return b.evaluate(a)
@@ -72,22 +81,40 @@ class CoreWord extends Array {
         return this.map((unit, i)=>(new CoreUnit({value:unit.value, operation: operations[i]})));
     }
 
-    findPotentialCores() {
-        if (this.length != 4) {
+    groupings(n=4) {
+        if (this.length < n) {
             return [];
         }
-        return [
-            this.copyWithOperations(["add", "sub", "mul", "div"]),
-            this.copyWithOperations(["add", "sub", "div", "mul"]),
-            this.copyWithOperations(["add", "mul", "sub", "div"]),
-            this.copyWithOperations(["add", "mul", "div", "sub"]),
-            this.copyWithOperations(["add", "div", "sub", "mul"]),
-            this.copyWithOperations(["add", "div", "mul", "sub"]),
-        ];
+        else if (n == 1) {
+            return [CoreWord.from([this.reduce(((a,b)=>a.concat(b)), new CoreUnit({value:0}))])];
+        }
+        else if (this.length == n) {
+            return [this];
+        }
+        const results = [];
+        for (let i = 1; i < this.length - n + 2; i++) {
+            const head = this.slice(0, i).groupings(1)[0];
+            const tail = this.slice(i, this.length).groupings(n-1);
+            for (const t of tail) {
+                results.push(CoreWord.from(head.concat(t)));
+            }
+        }
+        return results;
+    }
+
+    *findPotentialCores() {
+        for (const grouping of this.groupings(4)) {
+            yield grouping.copyWithOperations(["add", "sub", "mul", "div"]);
+            yield grouping.copyWithOperations(["add", "sub", "div", "mul"]);
+            yield grouping.copyWithOperations(["add", "mul", "sub", "div"]);
+            yield grouping.copyWithOperations(["add", "mul", "div", "sub"]);
+            yield grouping.copyWithOperations(["add", "div", "sub", "mul"]);
+            yield grouping.copyWithOperations(["add", "div", "mul", "sub"]);
+        }
     }
 
     findCore() {
-        const bestCore = this.findPotentialCores()
+        const bestCore = [...this.findPotentialCores()]
             .map((w)=>[w, w.evaluate()])
             .filter(([w, c]) => c > 0 && Number.isInteger(c))
             .toSorted((a, b) => a[1] - b[1])
@@ -103,7 +130,7 @@ function UnitView ({unit}) {
   return html`<span class="unit-view" data-operation=${op}>${unit.value}<br/>${unit.toString()}</span>`;
 }
 
-function UnitListView ({word}) {
+function WordView ({word}) {
     const core = word.findCore();
     if (core) {
         const coreUnit = new CoreUnit({value: core.evaluate()});
@@ -129,7 +156,7 @@ function App (props) {
   return html`
   <h1>Numeric Core Solver</h1>
   <textarea value=${message} onKeyup=${function(event){setMessage(event.target.value)}} />
-  ${words.map((word)=>(UnitListView({word})))}
+  ${words.map((word)=>(WordView({word})))}
   `;
 }
 
