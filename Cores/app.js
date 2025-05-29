@@ -4,9 +4,10 @@ import { html, render, useState, Component } from 'https://esm.sh/htm/preact/sta
 class CoreUnit {
     static letterZero = 'A'.codePointAt(0) - 1;
     value = 0;
+    text = null;
     operation = null;
 
-    constructor({value, operation, text}) {
+    constructor({value, text, operation}) {
         this.value = value;
         this.text = text;
         if (operation != null) {
@@ -14,7 +15,10 @@ class CoreUnit {
         }
     }
 
-    evaluate(accumulator=0) {
+    evaluate(accumulator) {
+        if (accumulator == null) {
+            return this.value;
+        }
         if (this.operation == 'add') {
             return accumulator + this.value;
         }
@@ -52,23 +56,71 @@ class CoreUnit {
         }
     }
 
-    static parse(letter) {
+    static parse(text) {
         let value;
-        if (!letter.match(/[^0-9]/)) {
-            value = parseInt(letter);
+        if (!text.match(/[^-0-9]/)) {
+            value = parseInt(text);
+            return new CoreUnit({value});
+        }
+        else if (text.length > 1 && !text.match(/[^MDCXLVI]/i)) {
+            return RomanUnit.parse(text);
         }
         else {
-            value = letter.toUpperCase().codePointAt(0) - CoreUnit.letterZero;
+            return LatinUnit.parse(text);
         }
-        return new CoreUnit({
-            value,
-            text:letter
-        });
+    }
+}
+
+class LatinUnit extends CoreUnit {
+    static parse(text) {
+        // how to handle a multi-letter unit? base 26?
+        const value = text.toUpperCase().codePointAt(0) - CoreUnit.letterZero;
+        return new LatinUnit({value, text});
+    }
+}
+
+class RomanUnit extends CoreUnit {
+    static romanSymbols = {
+        'M' : 1000,
+        'CM': 900,
+        'D' : 500,
+        'CD': 400,
+        'C' : 100,
+        'XC': 90,
+        'L' : 50,
+        'XL': 40,
+        'X' : 10,
+        'IX': 9,
+        'V' : 5,
+        'IV': 4,
+        'I' : 1,
+    }
+
+    static parse(text) {
+        let value = 0;
+        let roman = text.toUpperCase();
+        for (const [symbol, amount] of Object.entries(RomanUnit.romanSymbols)) {
+            while (roman.indexOf(symbol) == 0) {
+                roman = roman.substring(symbol.length);
+                value += amount;
+            }
+        }
+        return new RomanUnit({value, text})
+    }
+
+    appendTo(lhs) {
+        if (lhs == null) {
+            return this;
+        }
+        return RomanUnit.parse(`${lhs.toString()}${this.toString()}`)
     }
 }
 
 class CoreWord extends Array {
     static parse(word) {
+        // if (word.length > 1 && !word.match(/[^MDCXLVI]/i)) {
+        //     return CoreWord.from(word.split('').map(RomanUnit.parse));
+        // }
         return CoreWord.from(word.split('').map(CoreUnit.parse));
     }
 
@@ -94,8 +146,8 @@ class CoreWord extends Array {
         }
         return this.map((unit, i)=>(new CoreUnit({
             value: unit.value,
-            operation: operations[i],
-            text: unit.text
+            text: unit.text,
+            operation: operations[i]
         })));
     }
 
@@ -188,4 +240,4 @@ function App (props) {
 
 render(html`<${App} message="clue"/>`, document.body);
 
-Object.assign(globalThis, {CoreUnit, CoreWord})
+Object.assign(globalThis, {CoreUnit, CoreWord, RomanUnit})
